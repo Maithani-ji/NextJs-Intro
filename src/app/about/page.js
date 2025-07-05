@@ -1,9 +1,19 @@
-import React from 'react'
+// app/profile/page.js or app/about/page.js
 
-const AboutPage = () => {
+export default async function ProfilePage() {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/users`)
+  const users = await res.json()
+console.log(users);
+
   return (
-    <h1>About Us</h1>
+    <div>
+      <h1>About Page</h1>
+
+      <ul>
+        {users.map((user) => (
+          <li key={user.id}>{user.name}</li>
+        ))}
+      </ul>
+    </div>
   )
 }
-
-export default AboutPage

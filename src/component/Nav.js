@@ -6,8 +6,10 @@ const Nav = () => {
   return (
     <nav className='flex flex-row gap-10'>
          <Link href="/blog/test-blog">Blogs</Link>
-      <Link href="/about">About</Link>
+      <Link href="/about">About ISR</Link>
       <Link href="/">Home</Link>
+      <Link href="/products">Products SSR With CSR & SSG</Link>
+      <Link href="/slowproducts">Slow Products with Supense</Link>
     </nav>
   )
 }
