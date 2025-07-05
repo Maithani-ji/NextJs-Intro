@@ -22,7 +22,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/*  basic way to add navigation */}
+        {/* <nav>
+        <a href="/">Home</a> | <a href="/blog">Blog</a> | <a href="/about">About</a>
+        </nav> */}
         {children}
+       
       </body>
     </html>
   );
