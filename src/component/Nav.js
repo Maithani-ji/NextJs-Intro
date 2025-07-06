@@ -10,6 +10,8 @@ const Nav = () => {
       <Link href="/">Home</Link>
       <Link href="/products">Products SSR With CSR & SSG</Link>
       <Link href="/slowproducts">Slow Products with Supense</Link>
+      <Link href="/user">Api Crud</Link>
+
     </nav>
   )
 }
