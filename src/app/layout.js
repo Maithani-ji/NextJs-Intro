@@ -1,16 +1,18 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/component/Nav";
+import {SessionProvider} from "next-auth/react"
+import AuthProvider from "./AuthProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export const metadata = {
   title: "Create Next App",
@@ -21,14 +23,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-         <Nav/>
+         
         {/*  basic way to add navigation */}
         {/* <nav>
         <a href="/">Home</a> | <a href="/blog">Blog</a> | <a href="/about">About</a>
         </nav> */}
+       <AuthProvider> 
+        <Nav/>
         {children}
+        </AuthProvider>
        
       </body>
     </html>
